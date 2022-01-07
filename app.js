@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const squares = document.querySelectorAll('.grid div')
-    const scoreDisplay = document.querySelector('span')
-    const startBtn = document.querySelector('.start')
+    const squares = document.querySelectorAll('.grid div') //sets squares to be the grid divs
+    const scoreDisplay = document.querySelector('span') //sets the score
+    const startBtn = document.querySelector('.start') //sets the start and restart button
 
-    const width = 10
+    const width = 10 //the width of the grid
     let currentIndex = 0 //so first div in our grid
     let appleIndex = 0 //so first div in our grid
     let currentSnake = [2,1,0] //so the div in our grid being 2 (or HEAD), and 0 being the end (or TAIL, with all 1's being the body from now on)
@@ -15,8 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //to start and restart the game
     function startGame() {
-        currentSnake.forEach(index => squares[index].classList.remove('snake'))
-        squares[appleIndex].classList.remove('apple')
+        currentSnake.forEach(index => squares[index].classList.remove('snake')) //removes snake class form squares 2, 1 and 0
+        squares[appleIndex].classList.remove('apple') //removes apple class from first div (square)
         clearInterval(interval)
         score = 0
         randomApple()
